@@ -1,4 +1,4 @@
-= form_for @route, :html => { :class => 'form-horizontal' } do |f|
+= form_for [@gym,@route], :html => { :class => 'form-horizontal' } do |f|
   .control-group
     = f.label :gym_id, :class => 'control-label'
     .controls
@@ -17,4 +17,4 @@
       = f.text_field :raiting, :class => 'text_field'
   .form-actions
     = f.submit nil, :class => 'btn btn-primary'
-    = link_to t('.cancel', :default => t("helpers.links.cancel")), routes_path, :class => 'btn'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), gym_routes_path, :class => 'btn'
