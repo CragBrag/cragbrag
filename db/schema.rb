@@ -11,18 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20130921113931) do
-=======
-ActiveRecord::Schema.define(version: 20130921113329) do
->>>>>>> a7c3d29cd81c605606916fe7b21ce808692ee16e
+ActiveRecord::Schema.define(version: 20130921122643) do
 
   create_table "climbs", force: true do |t|
     t.integer  "user_id"
     t.integer  "route_id"
     t.datetime "attempted_on"
     t.boolean  "success"
-    t.string   "rating"
+    t.string   "grade"
     t.text     "comment"
     t.datetime "created_at"
     t.datetime "updated_at"

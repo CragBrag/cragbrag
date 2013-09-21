@@ -69,6 +69,6 @@ class ClimbsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def climb_params
-      params.require(:climb).permit(:user_id, :route_id, :attempted_on, :success, :rating, :comment)
+      params.require(:climb).permit(:user_id, :route_id, :attempted_on, :success, :grade, :comment)
     end
 end

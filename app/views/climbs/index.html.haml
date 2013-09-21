@@ -9,7 +9,7 @@
       %th= model_class.human_attribute_name(:route_id)
       %th= model_class.human_attribute_name(:attempted_on)
       %th= model_class.human_attribute_name(:success)
-      %th= model_class.human_attribute_name(:rating)
+      %th= model_class.human_attribute_name(:grade)
       %th= model_class.human_attribute_name(:comment)
       %th= model_class.human_attribute_name(:created_at)
       %th=t '.actions', :default => t("helpers.actions")
@@ -21,7 +21,7 @@
         %td= climb.route_id
         %td= climb.attempted_on
         %td= climb.success
-        %td= climb.rating
+        %td= climb.grade
         %td= climb.comment
         %td=l climb.created_at
         %td

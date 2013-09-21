@@ -16,7 +16,6 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'omniauth-facebook'
-gem 'rmagick'
 gem 'carrierwave'
 gem 'fog'
 

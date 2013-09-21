@@ -1,25 +1,3 @@
-<<<<<<< HEAD
-= form_for [@gym,@route], html: { class: 'form-horizontal' } do |f|
-  .control-group
-    = f.label :gym_id, class: 'control-label'
-    .controls
-      = f.text_field :gym_id, class: 'text_field'
-  .control-group
-    = f.label :active, class: 'control-label'
-    .controls
-      = f.text_field :active, class: 'text_field'
-  .control-group
-    = f.label :name, class: 'control-label'
-    .controls
-      = f.text_field :name, class: 'text_field'
-  .control-group
-    = f.label :grade, class: 'control-label'
-    .controls
-      = f.text_field :grade, class: 'text_field'
-  .form-actions
-    = f.submit nil, class: 'btn btn-primary'
-    = link_to t('.cancel', default: t("helpers.links.cancel")), gym_routes_path, class: 'btn'
-=======
 = form_for [@gym, @route], html: { multipart: true } do |f|
   - if @route.errors.any?
     #error_explanation
@@ -35,8 +13,8 @@
     = f.label :name
     = f.text_field :name
   .field
-    = f.label :raiting
-    = f.text_field :raiting
+    = f.label :grade
+    = f.text_field :grade
   .field
     = f.label :photo
     = image_tag(@route.photo_url) if @route.photo?
@@ -45,4 +23,3 @@
 
   .actions
     = f.submit 'Save'
->>>>>>> a7c3d29cd81c605606916fe7b21ce808692ee16e
