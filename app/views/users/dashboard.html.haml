@@ -1,0 +1,4 @@
+%h1 My Dashboard
+%ul
+  - @gyms.each do |gym|
+    %li= link_to gym.name, gym
