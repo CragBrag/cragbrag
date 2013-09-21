@@ -21,5 +21,8 @@ class User < ActiveRecord::Base
     "https://graph.facebook.com/#{facebook_id}/picture?width=#{width}&height=#{height}"
   end
 
+  def total_height_climbed
+    climbs.inject(0){|total, climb | total + climb.problem.height}
+  end
 
 end
