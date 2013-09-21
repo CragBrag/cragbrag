@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130921150725) do
+ActiveRecord::Schema.define(version: 20130921153258) do
 
   create_table "climbs", force: true do |t|
     t.integer  "user_id"
@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 20130921150725) do
     t.integer  "height"
   end
 
-  add_index "problems", ["gym_id"], name: "index_routes_on_gym_id", using: :btree
+  add_index "problems", ["gym_id"], name: "index_problems_on_gym_id", using: :btree
 
   create_table "tags", force: true do |t|
     t.integer  "user_id"
