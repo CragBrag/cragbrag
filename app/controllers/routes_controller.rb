@@ -52,6 +52,6 @@ class RoutesController < ApplicationController
     end
 
     def route_params
-      params.require(:route).permit(:gym_id, :active, :name, :raiting)
+      params.require(:route).permit(:gym_id, :active, :name, :raiting, :photo, :photo_url)
     end
 end

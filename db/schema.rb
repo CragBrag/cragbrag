@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130921070052) do
+ActiveRecord::Schema.define(version: 20130921113329) do
 
   create_table "climbs", force: true do |t|
     t.integer  "user_id"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20130921070052) do
     t.string   "raiting"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "photo"
   end
 
   add_index "routes", ["gym_id"], name: "index_routes_on_gym_id", using: :btree
