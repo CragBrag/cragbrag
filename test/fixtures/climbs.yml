@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 
+  route_id: 
+  attempted_on: 2013-09-21 02:21:44
+  success: false
+  rating: MyString
+  comment: MyText
+
+two:
+  user_id: 
+  route_id: 
+  attempted_on: 2013-09-21 02:21:44
+  success: false
+  rating: MyString
+  comment: MyText

@@ -1,0 +1,29 @@
+%h1 Listing climbs
+
+%table
+  %tr
+    %th User
+    %th Route
+    %th Attempted on
+    %th Success
+    %th Rating
+    %th Comment
+    %th
+    %th
+    %th
+
+  - @climbs.each do |climb|
+    %tr
+      %td= climb.user
+      %td= climb.route
+      %td= climb.attempted_on
+      %td= climb.success
+      %td= climb.rating
+      %td= climb.comment
+      %td= link_to 'Show', climb
+      %td= link_to 'Edit', edit_climb_path(climb)
+      %td= link_to 'Destroy', climb, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Climb', new_climb_path

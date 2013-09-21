@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130921060426) do
+ActiveRecord::Schema.define(version: 20130921062144) do
+
+  create_table "climbs", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "route_id"
+    t.datetime "attempted_on"
+    t.boolean  "success"
+    t.string   "rating"
+    t.text     "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "climbs", ["route_id"], name: "index_climbs_on_route_id", using: :btree
+  add_index "climbs", ["user_id"], name: "index_climbs_on_user_id", using: :btree
 
   create_table "gyms", force: true do |t|
     t.string   "name"

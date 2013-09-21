@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @climb.user
+%p
+  %b Route:
+  = @climb.route
+%p
+  %b Attempted on:
+  = @climb.attempted_on
+%p
+  %b Success:
+  = @climb.success
+%p
+  %b Rating:
+  = @climb.rating
+%p
+  %b Comment:
+  = @climb.comment
+
+= link_to 'Edit', edit_climb_path(@climb)
+\|
+= link_to 'Back', climbs_path
