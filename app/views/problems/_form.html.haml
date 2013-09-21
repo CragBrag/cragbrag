@@ -19,6 +19,9 @@
     = f.label :height, 'height (feet)'
     = f.text_field :height
   .field
+    = f.label :grade_type
+    = f.select :grade_type, Grade.grade_types
+  .field
     = f.label :photo
     = image_tag(@problem.photo_url) if @problem.photo?
     = f.file_field :photo

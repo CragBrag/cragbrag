@@ -18,6 +18,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'omniauth-facebook'
 gem 'carrierwave'
+gem 'pusher'
 gem 'fog'
 
 group :development, :test do

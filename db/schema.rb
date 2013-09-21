@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130921163154) do
+ActiveRecord::Schema.define(version: 20130921200800) do
 
   create_table "climbs", force: true do |t|
     t.integer  "user_id"
     t.integer  "problem_id"
     t.datetime "attempted_on"
-    t.boolean  "success"
+    t.boolean  "success",      default: true
     t.string   "grade"
     t.text     "comment"
     t.datetime "created_at"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20130921163154) do
     t.datetime "updated_at"
     t.string   "photo"
     t.integer  "height"
+    t.string   "grade_type"
   end
 
   add_index "problems", ["gym_id"], name: "index_problems_on_gym_id", using: :btree

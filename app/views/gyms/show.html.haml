@@ -1,13 +1,3 @@
-- model_class = Gym
-.page-header
-  %h1=t '.title', :default => model_class.model_name.human.titleize
+%h1= @gym.name
 
-%p
-  %strong= model_class.human_attribute_name(:name) + ':'
-  %br
-  = @gym.name
-
-.form-actions
-  = link_to t('.back', :default => t("helpers.links.back")), gyms_path, :class => 'btn'
-  = link_to t('.edit', :default => t("helpers.links.edit")), edit_gym_path(@gym), :class => 'btn'
-  = link_to t('.destroy', :default => t("helpers.links.destroy")), gym_path(@gym), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
+#stream

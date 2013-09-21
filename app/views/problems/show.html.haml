@@ -15,6 +15,9 @@
 %p
   %b Height (feet):
   = @problem.height
+%p
+  %b Grade Type:
+  = @problem.grade_type
 
 .thumbnails
   = image_tag(@problem.photo_url, class: :remote_image_url) if @problem.photo?
