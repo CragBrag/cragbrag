@@ -21,7 +21,11 @@
   %body
     .navbar.navbar-fluid-top
       .navbar-inner
-        %a.brand(href="#") Cragbrag
+        .nav.pull-left
+          = content_for :back
+        
+        %h3
+          = content_for :title
 
         - if current_user
           %ul.nav.pull-right

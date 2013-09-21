@@ -1,8 +1,6 @@
-.page-header
-  %h1 
-    My Climbs
-    .span.pull-right
-      = link_to 'Log a Climb', new_climb_path, class: 'btn btn-primary'
+.span.pull-right
+  = link_to 'Log a Climb', new_climb_path, class: 'btn btn-primary'
+
 %table.table.table-striped
   %thead
     %tr
@@ -25,4 +23,9 @@
             = link_to edit_climb_path(climb), class: 'btn btn-mini' do
               %i.icon-edit
 
+- content_for :back do
+  = link_to '< Back', '#', class: 'btn'
+
+- content_for :title do
+  My Climbs
 
