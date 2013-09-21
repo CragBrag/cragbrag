@@ -15,4 +15,8 @@ class User < ActiveRecord::Base
       user.email = auth.extra_.raw_info_.email
     end
   end
+
+  def photo_url(height=50, width=50)
+    "https://graph.facebook.com/#{facebook_id}/picture?width=#{width}&height=#{height}"
+  end
 end
