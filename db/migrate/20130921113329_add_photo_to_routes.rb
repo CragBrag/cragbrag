@@ -1,5 +1,5 @@
 class AddPhotoToRoutes < ActiveRecord::Migration
   def change
-    add_column :routes, :photo, :string
+    add_column :problems, :photo, :string
   end
 end

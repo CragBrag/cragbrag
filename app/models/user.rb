@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   has_many :memberships
   has_many :climbs
   has_many :gyms, through: :memberships
-
+  has_many :climbs
   def to_s
     "#{last_name}, #{first_name} (#{id})"
   end
@@ -20,4 +20,6 @@ class User < ActiveRecord::Base
   def photo_url(height=50, width=50)
     "https://graph.facebook.com/#{facebook_id}/picture?width=#{width}&height=#{height}"
   end
+
+
 end
