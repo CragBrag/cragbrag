@@ -5,6 +5,8 @@ gem 'mysql2'
 gem 'dotenv-rails'
 gem 'sass-rails', '~> 4.0.0'
 gem 'haml-rails'
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem 'less-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'therubyracer', platforms: :ruby
