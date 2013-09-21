@@ -21,7 +21,10 @@ class ClimbsController < ApplicationController
 
     respond_to do |format|
       if @climb.save
-        format.html { redirect_to @climb, notice: 'Climb was successfully created.' }
+        format.html { 
+          @climb.publish_to_stream
+          redirect_to @climb, notice: 'Climb was successfully created.' 
+        }
         format.json { render action: 'show', status: :created, location: @climb }
       else
         format.html { render action: 'new' }
