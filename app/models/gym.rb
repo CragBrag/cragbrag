@@ -1,5 +1,5 @@
 class Gym < ActiveRecord::Base
-  has_many :routes
+  has_many :problems
   has_many :memberships
   has_many :users, through: :memberships
 

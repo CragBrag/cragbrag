@@ -1,5 +1,5 @@
 class AddHeightToRoute < ActiveRecord::Migration
   def change
-  	add_column :routes, :height, :integer
+  	add_column :problems, :height, :integer
   end
 end

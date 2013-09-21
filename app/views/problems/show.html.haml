@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Gym:
+  = @problem.gym
+%p
+  %b Active:
+  = @problem.active
+%p
+  %b Name:
+  = @problem.name
+%p
+  %b Grade:
+  = @problem.grade
+%p
+  %b Height (feet):
+  = @problem.height
+
+.thumbnails
+  = image_tag(@problem.photo_url, class: :remote_image_url) if @problem.photo?
+
+= link_to 'Edit', edit_gym_problem_path(@gym, @problem)
+\|
+= link_to 'Back', gym_problems_path(@gym)

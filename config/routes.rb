@@ -10,7 +10,7 @@ Cragbrag::Application.routes.draw do
     resources :climbs, only: :index
   end
   resources :gyms do
-    resources :routes
+    resources :problems
   end
 
   get '/auth/:provider/callback' => 'sessions#create'

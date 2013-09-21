@@ -2,13 +2,13 @@ require 'test_helper'
 
 class RoutesControllerTest < ActionController::TestCase
   setup do
-    @route = routes(:one)
+    @problem = problems(:one)
   end
 
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:routes)
+    assert_not_nil assigns(:problems)
   end
 
   test "should get new" do
@@ -16,32 +16,32 @@ class RoutesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create route" do
-    assert_difference('Route.count') do
-      post :create, route: { active: @route.active, gym_id: @route.gym_id, name: @route.name, raiting: @route.raiting }
+  test "should create problem" do
+    assert_difference('Problem.count') do
+      post :create, problem: { active: @problem.active, gym_id: @problem.gym_id, name: @problem.name, raiting: @problem.raiting }
     end
 
-    assert_redirected_to route_path(assigns(:route))
+    assert_redirected_to route_path(assigns(:problem))
   end
 
-  test "should show route" do
-    get :show, id: @route
+  test "should show problem" do
+    get :show, id: @problem
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @route
+    get :edit, id: @problem
     assert_response :success
   end
 
-  test "should update route" do
-    patch :update, id: @route, route: { active: @route.active, gym_id: @route.gym_id, name: @route.name, raiting: @route.raiting }
-    assert_redirected_to route_path(assigns(:route))
+  test "should update problem" do
+    patch :update, id: @problem, problem: { active: @problem.active, gym_id: @problem.gym_id, name: @problem.name, raiting: @problem.raiting }
+    assert_redirected_to route_path(assigns(:problem))
   end
 
-  test "should destroy route" do
-    assert_difference('Route.count', -1) do
-      delete :destroy, id: @route
+  test "should destroy problem" do
+    assert_difference('Problem.count', -1) do
+      delete :destroy, id: @problem
     end
 
     assert_redirected_to routes_path
