@@ -1,7 +1,7 @@
 class Problem < ActiveRecord::Base
   belongs_to :gym
   has_many :climbs
-  #mount_uploader :photo, PhotoUploader
+  mount_uploader :photo, PhotoUploader
 
   scope :top_rope, -> {where(grade_type: 'top_rope')}
   scope :bouldering, -> { where(grade_type: 'bouldering') }

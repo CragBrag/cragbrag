@@ -52,6 +52,6 @@ class ProblemsController < ApplicationController
     end
 
     def problem_params
-      params.require(:problem).permit(:gym_id, :active, :name, :grade, :photo, :photo_url)
+      params.require(:problem).permit(:gym_id, :active, :name, :grade, :photo, :photo_url, :grade_type)
     end
 end
