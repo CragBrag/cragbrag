@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @membership.user
+%p
+  %b Gym:
+  = @membership.gym
+%p
+  %b Role:
+  = @membership.role
+
+= link_to 'Edit', edit_membership_path(@membership)
+\|
+= link_to 'Back', memberships_path

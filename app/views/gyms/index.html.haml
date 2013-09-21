@@ -1,0 +1,19 @@
+%h1 Listing gyms
+
+%table
+  %tr
+    %th Name
+    %th
+    %th
+    %th
+
+  - @gyms.each do |gym|
+    %tr
+      %td= gym.name
+      %td= link_to 'Show', gym
+      %td= link_to 'Edit', edit_gym_path(gym)
+      %td= link_to 'Destroy', gym, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Gym', new_gym_path
