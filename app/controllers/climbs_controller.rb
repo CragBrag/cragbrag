@@ -3,7 +3,7 @@ class ClimbsController < ApplicationController
   before_action :set_climb, only: [:show, :edit, :update, :destroy]
 
   def index
-    @climbs = Climb.all
+    @climbs = current_user.climbs
   end
 
   def show
@@ -56,6 +56,6 @@ class ClimbsController < ApplicationController
     end
 
     def climb_params
-      params.require(:climb).permit(:user_id, :route_id, :attempted_on, :success, :grade, :comment)
+      params.require(:climb).permit(:user_id, :problem_id, :attempted_on, :success, :grade, :comment)
     end
 end

@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130921153258) do
+ActiveRecord::Schema.define(version: 20130921163154) do
 
   create_table "climbs", force: true do |t|
     t.integer  "user_id"
-    t.integer  "route_id"
+    t.integer  "problem_id"
     t.datetime "attempted_on"
     t.boolean  "success"
     t.string   "grade"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20130921153258) do
     t.datetime "updated_at"
   end
 
-  add_index "climbs", ["route_id"], name: "index_climbs_on_route_id", using: :btree
+  add_index "climbs", ["problem_id"], name: "index_climbs_on_problem_id", using: :btree
   add_index "climbs", ["user_id"], name: "index_climbs_on_user_id", using: :btree
 
   create_table "gyms", force: true do |t|

@@ -3,13 +3,13 @@
   %h1=t '.title', :default => model_class.model_name.human.titleize
 
 %p
-  %strong= model_class.human_attribute_name(:user_id) + ':'
+  %strong= model_class.human_attribute_name(:gym) + ':'
   %br
-  = @climb.user_id
+  = @climb.problem.gym
 %p
-  %strong= model_class.human_attribute_name(:route_id) + ':'
+  %strong= model_class.human_attribute_name(:problem) + ':'
   %br
-  = @climb.route_id
+  = @climb.problem
 %p
   %strong= model_class.human_attribute_name(:attempted_on) + ':'
   %br
