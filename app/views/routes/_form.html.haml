@@ -16,6 +16,9 @@
     = f.label :grade
     = f.text_field :grade
   .field
+    = f.label :height, 'height (feet)'
+    = f.text_field :height
+  .field
     = f.label :photo
     = image_tag(@route.photo_url) if @route.photo?
     = f.file_field :photo

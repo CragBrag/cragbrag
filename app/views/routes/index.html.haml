@@ -9,6 +9,7 @@
       %th= model_class.human_attribute_name(:active)
       %th= model_class.human_attribute_name(:name)
       %th= model_class.human_attribute_name(:grade)
+      %th= model_class.human_attribute_name(:height)
       %th= model_class.human_attribute_name(:created_at)
       %th=t '.actions', :default => t("helpers.actions")
   %tbody
@@ -19,6 +20,7 @@
         %td= route.active
         %td= route.name
         %td= route.grade
+        %td= route.height
         %td=l route.created_at
         %td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_gym_route_path(route.gym, route), :class => 'btn btn-mini'

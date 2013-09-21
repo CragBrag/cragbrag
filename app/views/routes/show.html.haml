@@ -12,6 +12,9 @@
 %p
   %b Grade:
   = @route.grade
+%p
+  %b Height (feet):
+  = @route.height
 
 .thumbnails
   = image_tag(@route.photo_url, class: :remote_image_url) if @route.photo?
