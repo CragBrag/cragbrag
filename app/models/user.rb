@@ -1,6 +1,11 @@
 class User < ActiveRecord::Base
+  has_many :tags
   has_many :memberships
   has_many :gyms, through: :memberships
+
+  def to_s
+    "#{last_name}, #{first_name} (#{id})"
+  end
 
   def self.create_from_facebook(auth)
     create! do |user|

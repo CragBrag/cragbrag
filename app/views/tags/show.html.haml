@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @tag.user
+%p
+  %b Name:
+  = @tag.name
+%p
+  %b Token:
+  = @tag.token
+
+= link_to 'Edit', edit_user_tag_path(@user, @tag)
+\|
+= link_to 'Back', user_tags_path(@user)

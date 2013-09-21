@@ -1,0 +1,23 @@
+%h1 Listing tags
+
+%table
+  %tr
+    %th User
+    %th Name
+    %th Token
+    %th
+    %th
+    %th
+
+  - @tags.each do |tag|
+    %tr
+      %td= tag.user
+      %td= tag.name
+      %td= tag.token
+      %td= link_to 'Show', [@user, tag]
+      %td= link_to 'Edit', edit_user_tag_path(@user, tag)
+      %td= link_to 'Destroy', [@user, tag], :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Tag', new_user_tag_path(@user)

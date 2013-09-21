@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130921063124) do
+ActiveRecord::Schema.define(version: 20130921070052) do
 
   create_table "climbs", force: true do |t|
     t.integer  "user_id"
@@ -54,6 +54,16 @@ ActiveRecord::Schema.define(version: 20130921063124) do
   end
 
   add_index "routes", ["gym_id"], name: "index_routes_on_gym_id", using: :btree
+
+  create_table "tags", force: true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tags", ["user_id"], name: "index_tags_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "first_name"
