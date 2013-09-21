@@ -18,9 +18,9 @@ namespace :cragbrag do
     bkb_s = Gym.create(name: 'Brooklyn Boulders (Somerville)')
     Gym.create(name: 'Brooklyn Boulders (Brooklyn)')
 
-    Problem.create(gym: bkb_s, active: true, name: "Grandma's House", grade: '5.1', height: 40)
-    Problem.create(gym: bkb_s, active: true, name: 'Goldilocks', grade: '5.2', height: 90)
-    Problem.create(gym: bkb_s, active: true, name: 'Sleeping Beauty', grade: '5.8', height: 50)
+    Problem.create(gym: bkb_s, active: true, name: "Grandma's House", grade: '5.6', height: 40)
+    Problem.create(gym: bkb_s, active: true, name: 'Goldilocks', grade: '5.7', height: 90)
+    Problem.create(gym: bkb_s, active: true, name: 'Sleeping Beauty', grade: '5.9', height: 50)
     Problem.create(gym: bkb_s, active: true, name: 'Snow White', grade: '5.12a', height: 130)
     Problem.create(gym: bkb_s, active: true, name: 'The Big Bad Wolf', grade: '5.15a', height: 160)
 
