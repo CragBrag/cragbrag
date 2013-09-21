@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Gym:
+  = @route.gym
+%p
+  %b Active:
+  = @route.active
+%p
+  %b Name:
+  = @route.name
+%p
+  %b Raiting:
+  = @route.raiting
+
+= link_to 'Edit', edit_gym_route_path(@gym, @route)
+\|
+= link_to 'Back', gym_routes_path(@gym)

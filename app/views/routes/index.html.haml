@@ -1,0 +1,25 @@
+%h1 Listing routes
+
+%table
+  %tr
+    %th Gym
+    %th Active
+    %th Name
+    %th Raiting
+    %th
+    %th
+    %th
+
+  - @routes.each do |route|
+    %tr
+      %td= route.gym
+      %td= route.active
+      %td= route.name
+      %td= route.raiting
+      %td= link_to 'Show', [@gym, route]
+      %td= link_to 'Edit', edit_gym_route_path(@gym, route)
+      %td= link_to 'Destroy', [@gym, route], :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Route', new_gym_route_path(@gym)

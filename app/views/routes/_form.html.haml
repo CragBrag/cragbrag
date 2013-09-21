@@ -1,0 +1,19 @@
+= form_for [@gym, @route] do |f|
+  - if @route.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@route.errors.count, "error")} prohibited this route from being saved:"
+      %ul
+        - @route.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :active
+    = f.check_box :active
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :raiting
+    = f.text_field :raiting
+  .actions
+    = f.submit 'Save'
