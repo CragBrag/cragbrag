@@ -25,7 +25,7 @@
     = f.label :photo
     = image_tag(@problem.photo_url) if @problem.photo?
     = f.file_field :photo
-    /= f.hidden_field :photo_cache
+    = f.hidden_field :photo_cache
 
   .actions
     = f.submit 'Save'
