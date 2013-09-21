@@ -1,5 +1,5 @@
 class RenameRaitingToGrade < ActiveRecord::Migration
   def change
-    rename_column :routes, :raiting, :grade
+    rename_column :problems, :raiting, :grade
   end
 end
