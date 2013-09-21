@@ -23,12 +23,13 @@
       .navbar-inner
         %a.brand(href="#") Cragbrag
 
-        %ul.nav.pull-right
-          %li
-            .thumbnail
-              = image_tag current_user.photo_url(35, 35)
-              .caption
-                = current_user.first_name
+        - if current_user
+          %ul.nav.pull-right
+            %li
+              .thumbnail
+                = image_tag current_user.photo_url(35, 35)
+                .caption
+                  = current_user.first_name
 
     .container-fluid
       = bootstrap_flash
