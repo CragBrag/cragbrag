@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130921063124) do
+ActiveRecord::Schema.define(version: 20130921113931) do
 
   create_table "climbs", force: true do |t|
     t.integer  "user_id"
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20130921063124) do
     t.integer  "gym_id"
     t.boolean  "active"
     t.string   "name"
-    t.string   "raiting"
+    t.string   "grade"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

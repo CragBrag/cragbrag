@@ -1,1 +1,1 @@
-json.extract! @route, :gym_id, :active, :name, :raiting, :created_at, :updated_at
+json.extract! @route, :gym_id, :active, :name, :grade, :created_at, :updated_at
