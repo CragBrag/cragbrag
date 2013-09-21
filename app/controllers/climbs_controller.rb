@@ -1,30 +1,23 @@
 class ClimbsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_climb, only: [:show, :edit, :update, :destroy]
 
-  # GET /climbs
-  # GET /climbs.json
   def index
     @climbs = Climb.all
   end
 
-  # GET /climbs/1
-  # GET /climbs/1.json
   def show
   end
 
-  # GET /climbs/new
   def new
-    @climb = Climb.new
+    @climb = current_user.climbs.build
   end
 
-  # GET /climbs/1/edit
   def edit
   end
 
-  # POST /climbs
-  # POST /climbs.json
   def create
-    @climb = Climb.new(climb_params)
+    @climb = current_user.climbs.build climb_params
 
     respond_to do |format|
       if @climb.save
@@ -37,8 +30,6 @@ class ClimbsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /climbs/1
-  # PATCH/PUT /climbs/1.json
   def update
     respond_to do |format|
       if @climb.update(climb_params)
@@ -51,8 +42,6 @@ class ClimbsController < ApplicationController
     end
   end
 
-  # DELETE /climbs/1
-  # DELETE /climbs/1.json
   def destroy
     @climb.destroy
     respond_to do |format|
@@ -62,12 +51,10 @@ class ClimbsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_climb
       @climb = Climb.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def climb_params
       params.require(:climb).permit(:user_id, :route_id, :attempted_on, :success, :grade, :comment)
     end

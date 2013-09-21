@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :tags
   has_many :memberships
+  has_many :climbs
   has_many :gyms, through: :memberships
 
   def to_s
