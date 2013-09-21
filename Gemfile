@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.0.0'
 gem 'mysql2'
+gem 'pg'
+gem 'rails_12factor'
 gem 'dotenv-rails'
 gem 'sass-rails', '~> 4.0.0'
 gem 'haml-rails'
@@ -14,6 +16,9 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'omniauth-facebook'
+gem 'rmagick'
+gem 'carrierwave'
+gem 'fog'
 
 group :development, :test do
   gem 'byebug'

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 = form_for [@gym,@route], html: { class: 'form-horizontal' } do |f|
   .control-group
     = f.label :gym_id, class: 'control-label'
@@ -18,3 +19,30 @@
   .form-actions
     = f.submit nil, class: 'btn btn-primary'
     = link_to t('.cancel', default: t("helpers.links.cancel")), gym_routes_path, class: 'btn'
+=======
+= form_for [@gym, @route], html: { multipart: true } do |f|
+  - if @route.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@route.errors.count, "error")} prohibited this route from being saved:"
+      %ul
+        - @route.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :active
+    = f.check_box :active
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :raiting
+    = f.text_field :raiting
+  .field
+    = f.label :photo
+    = image_tag(@route.photo_url) if @route.photo?
+    = f.file_field :photo
+    = f.hidden_field :photo_cache
+
+  .actions
+    = f.submit 'Save'
+>>>>>>> a7c3d29cd81c605606916fe7b21ce808692ee16e
