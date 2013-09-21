@@ -13,6 +13,8 @@ Cragbrag::Application.routes.draw do
     resources :problems
   end
 
+  get '/tags/:token/checkin' => 'tags#checkin'
+
   get '/auth/:provider/callback' => 'sessions#create'
   get '/signout' => 'sessions#destroy', as: :signout
   get '/logged_out' => 'sessions#logged_out'

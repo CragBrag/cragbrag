@@ -9,6 +9,8 @@
     / Le HTML5 shim, for IE6-8 support of HTML elements
     /[if lt IE 9]
       = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
+
+    = javascript_include_tag "http://js.pusher.com/2.1/pusher.min.js"
     = stylesheet_link_tag "application", :media => "all"
     = favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144'
     = favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114'
@@ -16,6 +18,21 @@
     = favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png'
     = favicon_link_tag 'favicon.ico', :rel => 'shortcut icon'
     = javascript_include_tag "application"
+
+    :javascript
+       // Enable pusher logging - don't include this in production
+       Pusher.log = function(message) {
+         if (window.console && window.console.log) {
+           window.console.log(message);
+         }
+       };
+     
+       var pusher = new Pusher('17e2591f2cfc39ec557c');
+       var channel = pusher.subscribe('climbs');
+       channel.bind('climb', function(data) {
+         $('#stream').prepend("<div class='well'><h1>" + data.user.first_name + " - " + data.problem.name + "</h1></div>")
+         console.log(data);
+       });
 
 
   %body

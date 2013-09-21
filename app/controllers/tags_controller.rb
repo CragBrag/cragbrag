@@ -1,5 +1,5 @@
 class TagsController < ApplicationController
-  before_action :set_user
+  before_action :set_user, except: :checkin
   before_action :set_tag, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -48,6 +48,14 @@ class TagsController < ApplicationController
       format.html { redirect_to user_tags_url(@user) }
       format.json { head :no_content }
     end
+  end
+
+  def checkin
+    tag = Tag.find_by! token: params[:token]
+    climb = tag.user.climbs.build problem: Problem.first, success: true
+    climb.save
+    climb.publish_to_stream
+    render json: climb, status: :succcess
   end
 
   private
