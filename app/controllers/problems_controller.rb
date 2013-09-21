@@ -1,6 +1,6 @@
 class ProblemsController < ApplicationController
   before_action :set_gym
-  before_action :set_route, only: [:show, :edit, :update, :destroy]
+  before_action :set_problem, only: [:show, :edit, :update, :destroy]
 
   def index
     @problems = Problem.all
@@ -47,11 +47,11 @@ class ProblemsController < ApplicationController
       @gym = Gym.find params[:gym_id]
     end
 
-    def set_route
+    def set_problem
       @problem = Problem.find params[:id]
     end
 
-    def route_params
+    def problem_params
       params.require(:problem).permit(:gym_id, :active, :name, :grade, :photo, :photo_url)
     end
 end
