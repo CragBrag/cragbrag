@@ -1,6 +1,6 @@
 class CreateRoutes < ActiveRecord::Migration
   def change
-    create_table :problems do |t|
+    create_table :routes do |t|
       t.references :gym, index: true
       t.boolean :active
       t.string :name
