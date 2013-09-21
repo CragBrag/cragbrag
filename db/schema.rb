@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130921163154) do
+ActiveRecord::Schema.define(version: 20130921191155) do
 
   create_table "climbs", force: true do |t|
     t.integer  "user_id"
     t.integer  "problem_id"
     t.datetime "attempted_on"
-    t.boolean  "success"
+    t.boolean  "success",      default: true
     t.string   "grade"
     t.text     "comment"
     t.datetime "created_at"
