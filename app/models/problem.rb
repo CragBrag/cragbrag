@@ -23,7 +23,7 @@ class Problem < ActiveRecord::Base
     grade_type == 'Top Rope'
   end
 
-  def bouldering
+  def bouldering?
     grade_type == 'Bouldering'
   end
 

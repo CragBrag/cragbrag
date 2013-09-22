@@ -10,6 +10,8 @@ class GymsController < ApplicationController
   # GET /gyms/1
   # GET /gyms/1.json
   def show
+    @top_boulderer = User.all
+    @top_top_roper = User.all
   end
 
   # GET /gyms/new

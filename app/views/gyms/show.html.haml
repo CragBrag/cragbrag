@@ -1,3 +1,28 @@
 %h1= @gym.name
-
-#stream
+#leader-board-container.clearfix
+  #bouldering-leaders.board.first
+    %h1#bouldering-leaders-header Bouldering Leaders
+    - @top_boulderer.each_with_index do |user, index|
+      .activity-card.clearfix{ class: index == 0 ? 'first' : '' }
+        .place-indicator
+          = index+1
+        = render 'users/user', :user => user
+        %h3.acheivement
+          = user.cumulative_bouldering_score.to_s + 'points'
+  #top-rope-leaders.board
+    %h1#top-rope-leaders-header Top-Rope Leaders
+    - @top_top_roper.each_with_index do |user, index|
+      .activity-card.clearfix{ class: index == 0 ? 'first' : '' }
+        .place-indicator
+          = index+1
+        = render 'users/user', :user => user
+        %h3.acheivement
+          = user.cumulative_top_roping_score.to_s + 'points'
+  / #activity-feed.board
+  /   %h1#activity-feed-header Happening Now
+  /   / This div contains the "cards" displayed in the activity feed
+  /   .activity-card.clearfix
+  /     %img.profile-photo{alt: "{{THIS IS THE USER'S NAME - REPLACE ME}}"}/
+  /     .user-info
+  /       %h2 Kile Salmon
+  /       %h3.acheivement Completed the Insanity Route!

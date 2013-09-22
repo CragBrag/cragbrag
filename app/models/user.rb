@@ -8,6 +8,10 @@ class User < ActiveRecord::Base
     "#{last_name}, #{first_name} (#{id})"
   end
 
+  def name
+    "#{first_name} #{last_name}"
+  end
+
   def self.create_from_facebook(auth)
     create! do |user|
       user.facebook_id = auth.uid
@@ -25,16 +29,25 @@ class User < ActiveRecord::Base
     climbs.inject(0){|total, climb | total + climb.problem.height}
   end
 
-  def cumulative_score
+  def cumulative_top_roping_score
     total = 0
     climbs.map{|climb| climb.problem}.each do |problem|
       val = 0
       if problem.top_rope?
          val = problem.grade[2..problem.grade.length].to_i
-      else
+         total += val
+      end    
+    end
+    total 
+  end
+
+  def cumulative_bouldering_score
+    total = 0
+    climbs.map{|climb| climb.problem}.each do |problem|
+      if problem.bouldering?
         val = problem.grade.to_i  
+        total += val
       end
-      total += val
     end
     total 
   end
