@@ -2,8 +2,6 @@ class ChangeScoreToInt < ActiveRecord::Migration
   def up
     remove_column :users, :cul_top_rope_score
     remove_column :users, :cul_bouldering_score
-    remove_column :users, :cul_bouldering_score
-    remove_column :users, :cul_bouldering_score
     remove_column :users, :avg_top_rope_score
     remove_column :users, :avg_bouldering_score
     remove_column :users, :grade
