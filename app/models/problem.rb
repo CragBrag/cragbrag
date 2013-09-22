@@ -7,7 +7,7 @@ class Problem < ActiveRecord::Base
   scope :bouldering, -> { where(grade_type: 'bouldering') }
 
   def to_s
-    name
+    name + " (#{grade})"
   end
 
   def average_user_score
