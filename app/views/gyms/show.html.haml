@@ -1,3 +1,7 @@
 %h1= @gym.name
 
 #stream
+  - @event_stream.each do |event|
+    .well
+      = event.user.first_name
+      = image_tag event.user.photo_url
