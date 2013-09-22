@@ -14,7 +14,7 @@
     - @climbs.each do |climb|
       %tr
         %td= link_to climb.problem, climb
-        %td= climb.attempted_on
+        %td= distance_of_time_in_words_to_now climb.attempted_on
         %td= climb.grade
         %td= climb.success
         %td= climb.comment
@@ -24,7 +24,7 @@
               %i.icon-edit
 
 - content_for :back do
-  = link_to '< Back', '#', class: 'btn'
+  = link_to '< Back', current_user, class: 'btn'
 
 - content_for :title do
   My Climbs

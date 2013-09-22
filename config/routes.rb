@@ -17,7 +17,7 @@ Cragbrag::Application.routes.draw do
 
   get '/auth/:provider/callback' => 'sessions#create'
   get '/signout' => 'sessions#destroy', as: :signout
-  get '/logged_out' => 'sessions#logged_out'
+  get '/logged_out' => 'sessions#new'
 
-  root 'climbs#new'
+  root 'sessions#new'
 end
