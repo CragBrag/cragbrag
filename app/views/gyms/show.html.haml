@@ -1,5 +1,15 @@
 %h1= @gym.name
 #leader-board-container.clearfix
+  #activity-feed.board
+    %h1#activity-feed-header Happening Now
+    - @event_stream.each do |event|
+      .activity-card.clearfix
+        %img.profile-photo{alt: "#{event.user.name}", src: "#{event.user.photo_url}"}
+        .user-info
+          %h2 
+            = event.user.name
+          %h3.acheivement 
+            ="Completed #{event.problem.to_s}"
   #bouldering-leaders.board.first
     %h1#bouldering-leaders-header Bouldering Leaders
     - @top_boulderer.each_with_index do |user, index|
@@ -23,13 +33,3 @@
             = user.name
           %h3.acheivement
             = user.cumulative_top_roping_score.to_s + 'points'
-  #activity-feed.board
-    %h1#activity-feed-header Happening Now
-    - @event_stream.each do |event|
-      .activity-card.clearfix
-        %img.profile-photo{alt: "#{event.user.name}", src: "#{event.user.photo_url}"}
-        .user-info
-          %h2 
-            = event.user.name
-          %h3.acheivement 
-            ="Completed #{event.problem.to_s}"
