@@ -33,7 +33,7 @@ class User < ActiveRecord::Base
   end
 
   def calculate_cumulative_score!(field)
-    total = climbs.inject(0) { |sum, climb| sum + ( climb.problem.send("#{field}?") ? climb.problem.grade.to_i : 0 ) }
+    total = climbs.inject(0) { |sum, climb| sum + ( climb.problem.send("#{field}?") ? climb.problem.normalized_grade : 0 ) }
     update_attributes "cul_#{field}_score" => total
     total 
   end
@@ -41,9 +41,9 @@ class User < ActiveRecord::Base
   def calculate_average_score!(field)
     arr = climbs.keep_if { |climb| climb.problem.send("#{field}?") }
 
-    score = 0 if arr.empty?
+    score = 0.0 if arr.empty?
 
-    score ||= arr.inject(0) { |sum, climb| sum + ( climb.problem.send("#{field}?") ? climb.problem.grade.to_i : 0 ) }.to_f / arr.size if arr
+    score ||= arr.inject(0) { |sum, climb| sum + ( climb.problem.send("#{field}?") ? climb.problem.grade : 0 ) }.to_f / arr.size if arr
 
     update_attributes "avg_#{field}_score" => score
 

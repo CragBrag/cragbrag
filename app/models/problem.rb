@@ -18,10 +18,18 @@ class Problem < ActiveRecord::Base
   end
 
   def top_rope?
-    grade_type.underscore =~ /top_rope/i
+    grade_type.underscore.downcase == 'top_rope'
   end
 
   def bouldering?
-    grade_type =~ /bouldering/i
+    grade_type.underscore.downcase == 'bouldering'
+  end
+
+  def normalized_grade
+    if top_rope?
+      grade.to_s.split('.').last.to_i
+    else
+      grade
+    end
   end
 end
