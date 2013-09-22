@@ -6,8 +6,8 @@ class GymsController < ApplicationController
   end
 
   def show
-    @top_boulderer = User.all
-    @top_top_roper = User.all
+    @top_boulderer = User.all.limit(10) #TODO
+    @top_top_roper = User.all.limit(10) #TODO
     @event_stream = Climb.includes(:problem, :user).where('problems.gym_id' => @gym).limit(10)
   end
 

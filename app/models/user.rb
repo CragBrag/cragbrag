@@ -4,6 +4,13 @@ class User < ActiveRecord::Base
   has_many :climbs
   has_many :gyms, through: :memberships
   has_many :climbs
+
+
+  def self.top_top_ropers
+
+  end
+  
+
   def to_s
     "#{last_name}, #{first_name} (#{id})"
   end
@@ -41,18 +48,17 @@ class User < ActiveRecord::Base
     total 
   end
 
-  def cumulative_bouldering_score
+  def cumulative_bouldering_score #TODO
     total = 0
     climbs.map{|climb| climb.problem}.each do |problem|
       if problem.bouldering?
-        val = problem.grade.to_i  
-        total += val
+        total += problem.grade.to_i  
       end
     end
     total 
   end
 
-  def average_top_rope_score
+  def average_top_rope_score #TODO
     arr = climbs.keep_if{|climb| climb.problem.top_rope?}.map{|climb| climb.problem.grade}
     unless arr.empty?
       arr.inject{ |sum, el| sum + el }.to_f / arr.size if arr
