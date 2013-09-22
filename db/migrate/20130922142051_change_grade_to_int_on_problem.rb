@@ -1,8 +1,8 @@
 class ChangeGradeToIntOnProblem < ActiveRecord::Migration
   def up
-    change_table :problems do |t|
-      t.change :grade, :decimal, precision: 4, scale: 2
-    end
+    remove_column :problems, :grade
+
+    add_column :problems, :grade, :decimal, precision: 4, scale: 2
   end
 
   def down
