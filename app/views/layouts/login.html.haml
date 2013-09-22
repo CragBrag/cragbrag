@@ -36,22 +36,5 @@
 
 
   %body
-    .navbar.navbar-inverse.navbar-fixed-top
-      .navbar-inner
-        .container
-          %button.btn.btn-navbar.collapsed{"data-target" => ".nav-collapse", "data-toggle" => "collapse", :type => "button"}
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a.brand{ href: "#" }
-            = image_tag 'cb_app_logo.png', id: 'logo'
-          .nav-collapse.collapse{style: "height: 0px;"}
-            %ul.nav
-              %li= link_to 'My Profile', current_user
-              %li= link_to 'My Climbs', climbs_path(current_user)
-              %li= link_to 'Gyms', gyms_path
-              %li= link_to 'Users', users_path
-
     .container-fluid
-      = bootstrap_flash
       = yield
