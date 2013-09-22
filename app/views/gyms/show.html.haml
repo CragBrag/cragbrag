@@ -29,6 +29,7 @@
       .activity-card.clearfix
         %img.profile-photo{alt: "#{event.user.name}", src: "#{event.user.photo_url}"}
         .user-info
-          %h2 event.user.name
+          %h2 
+            = event.user.name
           %h3.acheivement 
             ="Completed #{event.problem.to_s}"
