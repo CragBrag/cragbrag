@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130921200800) do
+ActiveRecord::Schema.define(version: 20130922040331) do
 
   create_table "climbs", force: true do |t|
     t.integer  "user_id"
@@ -76,6 +76,11 @@ ActiveRecord::Schema.define(version: 20130921200800) do
     t.datetime "updated_at"
     t.string   "facebook_id"
     t.string   "grade"
+    t.integer  "total_height"
+    t.string   "cul_top_rope_score"
+    t.string   "cul_bouldering_score"
+    t.string   "avg_top_rope_score"
+    t.string   "avg_bouldering_score"
   end
 
 end

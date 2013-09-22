@@ -1,6 +1,7 @@
 class Problem < ActiveRecord::Base
   belongs_to :gym
   has_many :climbs
+
   mount_uploader :photo, PhotoUploader
 
   scope :top_rope, -> {where(grade_type: 'top_rope')}
@@ -11,20 +12,16 @@ class Problem < ActiveRecord::Base
   end
 
   def average_user_score
-    arr = climbs.pluck(:grade).map{|grade| grade.to_f}
-    unless arr.empty?
-      arr.inject{ |sum, el| sum + el }.to_f / arr.size
-    else
-      0
-    end   
+    arr = climbs.pluck(:grade).map{ |grade| grade.to_f }
+    return 0 if arr.empty?
+    arr.inject{ |sum, el| sum + el }.to_f / arr.size
   end
 
   def top_rope?
-    grade_type == 'Top Rope'
+    grade_type.underscore =~ /top_rope/i
   end
 
   def bouldering?
-    grade_type == 'Bouldering'
+    grade_type =~ /bouldering/i
   end
-
 end

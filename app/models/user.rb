@@ -5,12 +5,6 @@ class User < ActiveRecord::Base
   has_many :gyms, through: :memberships
   has_many :climbs
 
-
-  def self.top_top_ropers
-
-  end
-  
-
   def to_s
     "#{last_name}, #{first_name} (#{id})"
   end
@@ -32,48 +26,27 @@ class User < ActiveRecord::Base
     "https://graph.facebook.com/#{facebook_id}/picture?width=#{width}&height=#{height}"
   end
 
-  def total_height_climbed
-    climbs.inject(0){|total, climb | total + climb.problem.height}
+  def calculate_total_height_climbed!
+    height = climbs.inject(0) { |total, climb| total + climb.problem.height.to_i } 
+    update_attributes total_height: height
+    height
   end
 
-  def cumulative_top_roping_score
-    total = 0
-    climbs.map{|climb| climb.problem}.each do |problem|
-      val = 0
-      if problem.top_rope?
-         val = problem.grade[2..problem.grade.length].to_i
-         total += val
-      end    
-    end
+  def calculate_cumulative_score!(field)
+    total = climbs.inject(0) { |sum, climb| sum + ( climb.problem.send("#{field}?") ? climb.problem.grade.to_i : 0 ) }
+    update_attributes "cul_#{field}_score" => total
     total 
   end
 
-  def cumulative_bouldering_score #TODO
-    total = 0
-    climbs.map{|climb| climb.problem}.each do |problem|
-      if problem.bouldering?
-        total += problem.grade.to_i  
-      end
-    end
-    total 
-  end
+  def calculate_average_score!(field)
+    arr = climbs.keep_if { |climb| climb.problem.send("#{field}?") }
 
-  def average_top_rope_score #TODO
-    arr = climbs.keep_if{|climb| climb.problem.top_rope?}.map{|climb| climb.problem.grade}
-    unless arr.empty?
-      arr.inject{ |sum, el| sum + el }.to_f / arr.size if arr
-    else
-      0  
-    end
-  end
+    score = 0 if arr.empty?
 
-  def average_bouldering_score
-    arr = climbs.keep_if{|climb| climb.problem.bouldering?}.map{|climb| climb.problem.grade}
-    unless arr.empty?
-      arr.inject{ |sum, el| sum + el }.to_f / arr.size if arr
-    else
-      0  
-    end
-  end
+    score ||= arr.inject(0) { |sum, climb| sum + ( climb.problem.send("#{field}?") ? climb.problem.grade.to_i : 0 ) }.to_f / arr.size if arr
 
+    update_attributes "avg_#{field}_score" => score
+
+    score
+  end
 end

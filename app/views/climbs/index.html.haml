@@ -13,7 +13,7 @@
   %tbody
     - @climbs.each do |climb|
       %tr
-        %td= climb.problem
+        %td= link_to climb.problem, climb
         %td= climb.attempted_on
         %td= climb.grade
         %td= climb.success

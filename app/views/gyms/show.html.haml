@@ -21,7 +21,7 @@
           %h2
             = user.name
           %h3.acheivement
-            = user.cumulative_bouldering_score.to_s + ' points'
+            #{user.cul_bouldering_score} points
   #top-rope-leaders.board
     %h1#top-rope-leaders-header Top-Rope Leaders
     - @top_top_roper.each_with_index do |user, index|
@@ -32,4 +32,4 @@
           %h2
             = user.name
           %h3.acheivement
-            = user.cumulative_top_roping_score.to_s + ' points'
+            #{user.cul_top_rope_score} points
