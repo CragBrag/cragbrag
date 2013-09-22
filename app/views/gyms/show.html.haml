@@ -28,6 +28,7 @@
       .activity-card.clearfix{ class: index == 0 ? 'first' : '' }
         .place-indicator
           = index+1
+        %img.profile-photo{alt: "#{user.name}", src: "#{user.photo_url}"}
         .user-info
           %h2
             = user.name

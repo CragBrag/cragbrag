@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130922040331) do
+ActiveRecord::Schema.define(version: 20130922142051) do
 
   create_table "climbs", force: true do |t|
     t.integer  "user_id"
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20130922040331) do
     t.integer  "gym_id"
     t.boolean  "active"
     t.string   "name"
-    t.string   "grade"
+    t.decimal  "grade",      precision: 4, scale: 2
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "photo"
@@ -75,12 +75,12 @@ ActiveRecord::Schema.define(version: 20130922040331) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "facebook_id"
-    t.string   "grade"
+    t.decimal  "grade",                precision: 4, scale: 2
     t.integer  "total_height"
-    t.string   "cul_top_rope_score"
-    t.string   "cul_bouldering_score"
-    t.string   "avg_top_rope_score"
-    t.string   "avg_bouldering_score"
+    t.integer  "cul_top_rope_score"
+    t.decimal  "cul_bouldering_score", precision: 3, scale: 0
+    t.decimal  "avg_top_rope_score",   precision: 4, scale: 2
+    t.decimal  "avg_bouldering_score", precision: 4, scale: 2
   end
 
 end
