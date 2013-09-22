@@ -30,7 +30,9 @@
        var pusher = new Pusher('17e2591f2cfc39ec557c');
        var channel = pusher.subscribe('climbs');
        channel.bind('climb', function(data) {
-         $('#stream').prepend("<div class='well'><h1>" + data.user.first_name + " - " + data.problem.name + "</h1></div>")
+         var ele = "<div class='activity-card clearfix'><img class='profile-photo' src='https://graph.facebook.com/" + data.user.facebook_id + "/picture?width=50&height=50'><div class='user-info'><h2>" + data.user.first_name + "</h2><h3 class='acheivement'> Completed " + data.problem.name + "</h3></div></div>";
+
+         $('#stream').prepend(ele)
          console.log(data);
        });
 
