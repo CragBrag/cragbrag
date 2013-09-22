@@ -55,7 +55,7 @@ class TagsController < ApplicationController
     climb = tag.user.climbs.build problem: Problem.first, success: true
     climb.save
     climb.publish_to_stream
-    render json: climb, status: 200
+    render json: climb.to_json(include: :user), status: 200
   end
 
   private
