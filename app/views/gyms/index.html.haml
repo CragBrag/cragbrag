@@ -1,20 +1,17 @@
-- model_class = Gym
-.page-header
-  %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+%h1 Gyms
+
 %table.table.table-striped
   %thead
     %tr
-      %th= model_class.human_attribute_name(:id)
-      %th= model_class.human_attribute_name(:name)
-      %th= model_class.human_attribute_name(:created_at)
+      %th Name
+      %th Problems
       %th
   %tbody
     - @gyms.each do |gym|
       %tr
-        %td= link_to gym.id, gym_path(gym)
-        %td= gym.name
-        %td=l gym.created_at
+        %td= link_to gym.name, gym_path(gym)
+        %td= gym.problems.count
         %td
-          .span.pull-right
+          %span.pull-right
             = link_to edit_gym_path(gym), class: 'btn btn-mini' do
               %i.icon-edit

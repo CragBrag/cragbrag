@@ -14,7 +14,7 @@
     - @climbs.each do |climb|
       %tr
         %td= link_to climb.problem, climb
-        %td= climb.attempted_on
+        %td= distance_of_time_in_words_to_now climb.attempted_on
         %td= climb.grade
         %td= climb.success
         %td= climb.comment
