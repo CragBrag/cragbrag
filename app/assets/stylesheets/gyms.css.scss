@@ -2,123 +2,141 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body{
-	background-color:#e6ebed;
+  background-color:#e6ebed;
 }
 
 #leader-board-container {
-	position:relative;
-	top:0;
-	bottom:0;
+  position:relative;
+  top:0;
+  bottom:0;
 }
 
 div.board {
-	width:33%;
-	height:100%;
-	float:left;
-	padding:.5em 0;
-	border-left:2px solid #bbb;
-	margin: .5em 0;
+  width:33%;
+  height:100%;
+  float:left;
+  padding:.5em 0;
+  border-left:2px solid #bbb;
+  margin: .5em 0;
+  min-width:520px;
+}
+
+@media (min-width:1024px) and (max-width:1580) {
+  div.board, div.board#activity-feed {
+    width:49%;
+  }
+}
+
+@media (max-width:1023px) {
+  div.board, div.board#activity-feed {
+    width:100%;
+    min-width:0px;
+  }
+  div.board#activity-feed {
+    float:left;
+  }
 }
 
 /* board leader styles */
 div.board.first{
-	border-left:0;
+  border-left:0;
 }
 div.board .activity-card.first img.profile-photo {
-	display:block;
+  display:block;
 }
 div.board .activity-card.first h2{
-	font-size:2em;
+  font-size:2em;
 }
 
 #activity-feed{
-	float:right;
-	width:30%
+  float:right;
+  width:30%
 }
 
 .board h1 {
-	font-size:1.2em;
-	line-height:1em;
-	margin:0 0 .6em .5em;
-	color:#477b99;
+  font-size:1.2em;
+  line-height:1em;
+  margin:0 0 .6em .5em;
+  color:#477b99;
 }
 
 .activity-card{
-	margin:0 0 1px 0;
-	background-color:#fff;
-	height:97px;
-	border-top:2px solid #d6dee1;
+  margin:0 0 1px 0;
+  background-color:#fff;
+  height:97px;
+  border-top:2px solid #d6dee1;
 }
 .activity-card.first{
-	height:121px;
-	margin-bottom:.75em;
+  height:121px;
+  margin-bottom:.75em;
 }
 
 .activity-card .place-indicator {
-	background-color:#d6dee1;
-	width:2em;
-	height:100%;
-	float:left;
-	color:#477b99;
-	font-size:2em;
-	font-weight:bold;
-	padding-top: 1.5em;
-	padding-left: .7em;
-	box-sizing: border-box;
+  background-color:#d6dee1;
+  width:2em;
+  height:100%;
+  float:left;
+  color:#477b99;
+  font-size:2em;
+  font-weight:bold;
+  padding-top: 1.5em;
+  padding-left: .7em;
+  box-sizing: border-box;
 }
 .activity-card.first .place-indicator {
-	width: 2.25em;
-	font-size: 3em;
-	padding-left: .8em;
-	padding-top: 1.2em;
+  width: 2.25em;
+  font-size: 3em;
+  padding-left: .8em;
+  padding-top: 1.2em;
 }
 
 .activity-card .user-info {
-	float:left;
-	margin:2em 0 0 0;
+  float:left;
+  margin:2em 0 0 0;
 }
 
 .activity-card .profile-photo {
-	height: 60px;
-	width:60px;
-	float:left;
-	border-radius:50%;
-	margin: 1.1em .75em 0 1em;
+  height: 60px;
+  width:60px;
+  float:left;
+  border-radius:50%;
+  margin: 1.1em .75em 0 1em;
 }
 .activity-card.first .profile-photo {
-	height:90px;
-	width:90px;
+  height:90px;
+  width:90px;
 }
 
 .activity-card.first h2 {
-	font-size:2em;
+  font-size:2em;
 }
 .activity-card h2 {
-	margin:0;
-	font-size:1.5em;
-	line-height:1.3em;
-	color:#477b99;
+  margin:0;
+  font-size:1.5em;
+  line-height:1.3em;
+  color:#477b99;
 }
 
 .activity-card h3 {
-	margin:0;
-	font-size:1.2em;
-	line-height:1em;
-	color:#b4c4cb;
-	font-weight:normal;
+  margin:0;
+  font-size:1.2em;
+  line-height:1em;
+  color:#b4c4cb;
+  font-weight:normal;
 }
 
 .activity-card.first h3{
-	font-size:1.5em;
+  font-size:1.5em;
 }
 
 span.hard {
-	color:#ce4739;
+  color:#ce4739;
 }
 
 span.medium {
-	color:#e3ba3e;
+  color:#e3ba3e;
 }
 span.easy {
-	color:#5cad69;
+  color:#5cad69;
 }
+
