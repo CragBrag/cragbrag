@@ -43,3 +43,67 @@
 .login-container {
   padding-top: 30%;
 }
+
+* {
+	box-sizing:border-box;
+}
+body {
+	font-family: Helvetica, Arial, sans-serif;
+}
+form {
+	max-width:320px;
+	padding:5px;
+}
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input  {
+	background-color:#e6ebed;
+	box-shadow:none;
+	-webkit-box-shadow:none;
+	height: 40px;
+}
+select {
+	width:100%;
+}
+select:focus {
+	outline:none;
+}
+label {
+	color:#666;
+}
+textarea {
+	height: 80px;
+}
+button {
+	width: 100%;
+	height: 40px;
+	-webkit-appearance: none;
+	border: none;
+	border-radius: 6px;
+	background-color: #477b99;
+	color: #fff;
+	font-size: 1.75em;
+	font-weight: bold;
+}
+#title-bar {
+	background-color:#e6ebed;
+	width:100%;
+	padding:5px;
+	color:#477b99;
+	font-weight:bold;
+}
+.inline {
+	display:inline-block;
+}
+.full {
+	width:100%;
+}
+#date-container {
+	margin-right:10px;
+}
+input.date-field {
+	width: 55px;
+	overflow: hidden;
+}
+input.time-field {
+	width: 55px;
+	overflow: hidden;
+}
