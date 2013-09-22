@@ -11,3 +11,27 @@
  *= require_self
  *= require_tree .
  */
+#logo {
+	width: 130px;
+}
+
+.navbar-inverse .navbar-inner {
+	background-color:#477b99;
+	background-image:none;
+}
+
+.navbar-inverse .btn-navbar, .navbar-inverse .btn-navbar:hover, .navbar-inverse .btn-navbar:focus, .navbar-inverse .btn-navbar:active, .navbar-inverse .btn-navbar.active, .navbar-inverse .btn-navbar.disabled, .navbar-inverse .btn-navbar[disabled] {
+	background-color:#477b99;
+	border: 0;
+	background-image:none;
+	box-shadow:none;
+	width:4em;
+	margin-top:1.65em;
+}
+.navbar .btn-navbar .icon-bar {
+	width:100%;
+	height:4px;
+}
+.btn-navbar .icon-bar + .icon-bar {
+	margin-top:5px;
+}
